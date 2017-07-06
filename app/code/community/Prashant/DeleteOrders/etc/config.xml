@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Prashant_DeleteOrders>
+            <version>1.0.0</version>
+        </Prashant_DeleteOrders>
+    </modules>
+    <global>
+        <helpers>
+            <deleteorders>
+                <class>Prashant_DeleteOrders_Helper</class>
+            </deleteorders>
+        </helpers>
+        <blocks>
+            <deleteorders>
+                <class>Prashant_DeleteOrders_Block</class>
+            </deleteorders>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Prashant_DeleteOrders_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                    <sales_order_view>Prashant_DeleteOrders_Block_Adminhtml_Sales_Order_View</sales_order_view>
+                </rewrite>            
+            </adminhtml>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <prashant_deleteorders before="Mage_Adminhtml">Prashant_DeleteOrders_Adminhtml</prashant_deleteorders>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

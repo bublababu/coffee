@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <folio3 translate="label" module="Folio3_MaintenanceMode">
+            <label>Folio3 Extensions</label>
+            <sort_order>1000</sort_order>
+        </folio3>
+    </tabs>
+
+    <sections>
+        <MaintenanceMode translate="label" module="Folio3_MaintenanceMode">
+            <label>Maintenance Mode</label>
+            <tab>folio3</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>998</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <config translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <isEnabled translate="label">
+                            <label>Maintenance Mode?</label>
+                            <comment>Enable Maintenance Mode?</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </isEnabled>
+                        <adminAccess translate="label">
+                            <label>Admin Access</label>
+                            <comment>Administrators bypass Maintenance Mode?</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </adminAccess>
+                        <allowedIPs translate="label">
+                            <label>Allowed IPs</label>
+                            <comment><![CDATA[List of Allowed IPs (One per line)]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allowedIPs>
+                        <pageStaticBlock>
+                            <label>Maintenance Page (Static Block)</label>
+                            <comment>Select a static block for your maintenance page.</comment>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>folio3_maintenanceMode/adminhtml_system_config_static_block</frontend_model>
+                            <source_model>cms/resource_block_collection</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pageStaticBlock>
+                        <showCountdown translate="label comment">
+                            <label>Enable Countdown</label>
+                            <comment>Enable/Disable counter on the maintenance page</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showCountdown>
+                        <upDateTime translate="label comment">
+                            <label>Expected Up Date/Time</label>
+                            <comment><![CDATA[The expected date/time for the site to be live again.<br />This date depends on the store's timezone selected in System -> Configuration -> General -> General -> Locale Options -> Timezone]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>folio3_maintenanceMode/adminhtml_system_config_date</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upDateTime>
+                    </fields>
+                </config>
+            </groups>
+        </MaintenanceMode>
+    </sections>
+</config>
