@@ -1,0 +1,21 @@
+<?php if($crumbs && is_array($crumbs)): ?>
+    <div class="breadcrumbs">
+        <ul xmlns:v="http://rdf.data-vocabulary.org/#">
+			<?php if ($crumbs && is_array($crumbs)): ?>
+			    <?php foreach ($crumbs as $_crumbName => $_crumbInfo): ?>
+			        <?php if ($_crumbInfo['link'] && !$_crumbInfo['first']): ?>
+			            <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->htmlEscape($_crumbInfo['title']) ?>"><?php echo $this->htmlEscape($_crumbInfo['label']) ?></a>
+			        <?php elseif ($_crumbInfo['last']): ?>
+			            <?php echo $this->htmlEscape($_crumbInfo['label']) ?>
+			        <?php elseif (!$_crumbInfo['first']): ?>
+			            <?php echo $this->htmlEscape($_crumbInfo['label']) ?>
+			        <?php else: ?>
+			        <?php endif; ?>
+			        <?php if (!$_crumbInfo['last'] && !$_crumbInfo['first']): ?>
+			           <span>/ </span>
+			        <?php endif; ?>
+			    <?php endforeach; ?>
+			<?php endif; ?>
+        </ul>
+    </div>
+<?php endif; ?>
