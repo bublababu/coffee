@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Folio3_MaintenanceMode>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Folio3_MaintenanceMode>
+    </modules>
+</config>

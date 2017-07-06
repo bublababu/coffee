@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Prashant_DeleteOrders>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Prashant_DeleteOrders>
+    </modules>
+</config>
