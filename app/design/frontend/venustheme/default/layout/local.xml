@@ -127,16 +127,16 @@
 
 	    <reference name="footer_top">
 	    	<block type="page/html" name="footer_link_custom" template="page/template/footer_block_link.phtml">
-    			<block type="cms/block" name="footer.blocklink1">
+    			<!--<block type="cms/block" name="footer.blocklink1">
     				<action method="setBlockId"><block_id>about-us-footer</block_id></action>
     			</block>
     			<block type="cms/block" name="footer.blocklink2">
     				<action method="setBlockId"><block_id>block-account-footer</block_id></action>
-    			</block>
-    			<block type="cms/block" name="footer.blocklink3">
+    			</block>-->
+    			<block type="cms/block" name="footer.blocklink2">
     				<action method="setBlockId"><block_id>popular-tags-footer</block_id></action>
     			</block>
-    			<block type="cms/block" name="footer.blocklink4">
+    			<block type="cms/block" name="footer.blocklink3">
     				<action method="setBlockId"><block_id>block-list-link-footer</block_id></action>
     			</block>
     		</block>

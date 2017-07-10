@@ -75,102 +75,88 @@ $accountIcon = '<i class="fa '.$account_class.'"></i>';
 
 <div class="header header-v2">
     <div id="header" class="page-header1">
+	<div class="header-top-bar">
+	    <div class="inner">
+		<span class="lnk-collapse">
+		    <i class="fa fa-plus" aria-hidden="true"></i>
+		</span>
+		<div class="toplinkpan">
+		    <span class="contact">+370 60704466</span>
+		    <a href="mailto:labas@coffee24.lt" class="email">labas@coffee24.lt</a>
+		    <ul>
+			
+			
+			<?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
+			    <li><a href="<?php echo $this->getUrl('customer/account'); ?>"><span><?php echo strtoupper(Mage::getSingleton('customer/session')->getCustomer()->getFirstname());?></span></a> </li>
+			    <li><a href="<?php echo $this->getUrl('customer/account/logout'); ?>">ATSIJUNGTI</a></li>
+			<?php else: ?>
+			    <li><a href="<?php echo $this->getUrl('customer/account/login');?>">PRISIJUNGTI</a></li>
+			    <li><a href="<?php echo $this->getUrl('customer/account/create');?>">U&Zcaron;SIREGISTRUOTI</a></li>
+			<?php endif; ?>
+
+			
+			
+			<li><a href="<?php echo $this->getUrl('kavos-aparatu-remontas');?>">KAVOS APARAT&Uogon; REMONTAS</a></li>
+		    </ul>
+		</div>
+		
+		<?php echo $this->getChildHtml('topSearch') ?>
+		
+		<div class="header-minicart">
+		    <?php echo $this->getChildHtml('minicart_head'); ?>
+		</div>
+		
+	    </div>
+	</div>
         <div class="wrap-container">
             <div class="page-header-container">
 			<div class="row">
 				<div class="container">	
-					<div class="col-md-4 col-sm-12 col-xs-12">			
+					<div class="col-md-3 col-sm-12 col-xs-12 logo-cont">			
 						<a class="logo" href="<?php echo $this->getUrl('') ?>">
 							<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
 							<img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
 						</a>
 					</div>
-					<div class="col-md-4 hidden-sm hidden-xs">	
-
+					<div class="col-md-9 col-sm-12 col-xs-12 main-nav">
+					    
+					    
+					    <!-- Navigation -->
+			
+					    <div class="row">
+						<div id="header-nav" class="skip-content">
+						    <?php echo $this->getChildHtml('topMenu') ?>
+						</div>
+				
+						<!-- Search -->
+						<?php if($show_searchbox){ ?>
+						<div id="header-search" class="skip-content">
+						    <?php echo $this->getChildHtml('topSearch') ?>
+						</div>
+						<?php } ?>
+				
+						<!-- Account -->
+						<?php if($top_links){ ?>
+						<div id="header-account" class="skip-content">
+						    <?php echo $this->getChildHtml('topLinks') ?>
+						</div>
+						<?php } ?>
+					    </div>
+					    
 					</div>
- 					<div class="col-md-4 hidden-sm hidden-xs">	
-<?php	/**					<div class="account-cart-wrapper">
-							<div class="ves-parallax bg-parallax-1" data-parallax-scroll="0.4" data-parallax-percent="50%">
-								<div class="ourservice-block block ">
-									<div class="media ">
-										<div class="ourservice-content ">
-											<div class="iview-caption-v3">
-												<div class="inner-wrap animated fadeInUp start-anim">
-													<div class="tx-div medium"></div>
-														<p class="lead drop-shadow" style="font-size: 1em; color: #ffffff;">IVESK SAVO EL PA&Scaron;TO ADRESA IR I&Scaron;KARTO GAUK 5% NUOLAIDA GERIAUSIOM KAVOS PUPELEM LIETUVOJE!</p>
-														<div class="mailmunch-forms-in-post-middle" style="display: none !important;"></div>
-														<div class="alt-font slider-callout">								
-														<form style="display: inline-flex;" action="http://www.devnotes.lt/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
 
-																		<div class="form-subscribe-header">
-																			<label for="newsletter"></label>
-																		</div>
-														<div class="">
-															<input style="border-radius: 0px;height: 32px;" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" placeholder="pvz. labas@coffee24.lt" title="Užsisakyti musu naujienlaiški" class="input-text required-entry validate-email">
-														</div>
-																	
-														<div class="">
-															<button type="submit" title="Užsisakyti" class="button"><span><span> <i class="fa fa-envelope"></i></span></span></button>
-														</div>
-
-														</form>
-													</div>
-												<div class="tx-div medium"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						</div> **/?>
-							<div class="account-cart-wrapper">
-								<?php if($show_searchbox){ ?>
-								<a href="#header-search" class="skip-link skip-search">
-									<span class="fa <?php echo $searchbox_class ?>"></span>
-									<span class="label"><?php echo $this->__('Search'); ?></span>
-								</a>
-								<?php } ?>
-								<!-- Account -->
-								<?php if($top_links){ ?>
-								<a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-									<span class="fa" style=" color: #371303;" <?php echo $account_class ?>"></span>
-									<span class="label" style="color: #371303;"><?php echo $this->__('Prisijungti'); ?></span>
-								</a>
-								<?php } ?>
-								<!-- Cart -->
-								<div class="header-minicart">
-									<?php echo $this->getChildHtml('minicart_head'); ?>
-								</div>
-
-							</div>
-					</div>	
 				</div>
 			</div>	
-			<div class="row">
-				<div class="container">	
-					<div class="col-md-4 col-xs-12">			
-							<div class="bgr-round">
-								<p class="lead drop-shadow" style="font-size: 1em; color: #371303;">REIKIA NUO&Scaron;IRDAUS PATARIMO?</p>
-								<span class="menu-title"><a href="tel:+37060704466" style="color: #371303;  font-size: 1.5em;  font-weight: bolder; ">+370 60704466</a></span>
-							</div>
-					</div>
-					<div class="col-md-4 col-xs-12 ">
-							<?php echo $this->getChildHtml('topSearch') ?>
 
-					</div>
-					<div class="col-md-4 col-xs-12 ">
-					</div>
-				</div>
-			</div>
 			<div class="row">
-				<div class="container col-md-offset-2">	
+				<div class="container col-md-offset-2 nav-collapse-blk">	
 
 					<?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
 					  // See app.js for details ?>
 					  <div class="store-language-container hidden"> </div>
 
 					  <!-- Skip Links -->
-					  <div class="skip-links hidden-lg hidden-md hidden-sm">
+					  <div class="skip-links main-nav">
 						<a href="#header-nav" class="skip-link skip-nav skip-active">
 							<span class="fa fa-bars"></span>
 							<span class="label"><?php echo $this->__('Menu'); ?></span>
@@ -182,30 +168,7 @@ $accountIcon = '<i class="fa '.$account_class.'"></i>';
 			</div>
 		</div>
 </div>
-            <!-- Navigation -->
-			
-			
-			
-			
-			<div class="row">
-                <div id="header-nav" class="skip-content">
-                    <?php echo $this->getChildHtml('topMenu') ?>
-                </div>
-
-                <!-- Search -->
-                <?php if($show_searchbox){ ?>
-                <div id="header-search" class="skip-content">
-                    <?php echo $this->getChildHtml('topSearch') ?>
-                </div>
-                <?php } ?>
-
-                <!-- Account -->
-                <?php if($top_links){ ?>
-                <div id="header-account" class="skip-content">
-                    <?php echo $this->getChildHtml('topLinks') ?>
-                </div>
-                <?php } ?>
-            </div>
+            
     </div>
         <?php echo $this->getChildHtml('topContainer'); ?>
 </div>

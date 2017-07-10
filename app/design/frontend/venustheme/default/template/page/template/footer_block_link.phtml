@@ -27,7 +27,18 @@
 
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <?php echo $this->getChildHtml('footer.blocklink1') ?>
+        <?php //echo $this->getChildHtml('footer.blocklink1') ?>
+        
+        <div class="widget-links block">
+            <div class="block-title"><strong> <span>M&umacr;s&uogon; parduotuv&edot;</span></strong></div>
+            <div class="block-content widget-inner">
+            <div class="panel-group">
+                <?php echo $this->getLayout()->createBlock('Ves_Megamenu_Block_Top')->getTree(); ?>
+            </div>
+            </div>
+        </div>
+        
+        
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <?php echo $this->getChildHtml('footer.blocklink2') ?>
@@ -36,6 +47,7 @@
         <?php echo $this->getChildHtml('footer.blocklink3') ?>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <?php echo $this->getChildHtml('footer.blocklink4') ?>
+        <?php //echo $this->getChildHtml('footer.blocklink4') ?>
+        <iframe frameborder="0" height="250" scrolling="no" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCoffee24.LT&amp;tabs=timeline&amp;width=285&amp;height=250&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=873838045960553" style="border: none; overflow: hidden;" width="285"></iframe>
     </div>
 </div>

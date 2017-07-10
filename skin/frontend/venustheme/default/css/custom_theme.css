@@ -141,13 +141,10 @@ input:focus, input:hover, select:focus {
 }
 
 /* line 67, ../scss/custom_theme.scss */
-.header {
-
-
-  background-color: #fff;
-
+.header {background-color: #fff; background-image: none !important; border-bottom: 2px solid #4e4842;
   /* Keep header when scrolling*/
 }
+.cms-home .header {border-bottom:0;}
 /* line 72, ../scss/custom_theme.scss */
 .header .page-header {
   padding: 0;
@@ -193,11 +190,12 @@ input:focus, input:hover, select:focus {
   *display: inline;
   zoom: 1;
   margin-right: 3px;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 19px;
   vertical-align: middle;
   font-size: 18px;
   line-height: 25px;
+  background-position: -1px -100px;
 }
 /* line 24, ../scss/bootstrap/_rtl.scss */
 .rtl .header .skip-link .icon, .rtl
@@ -320,7 +318,15 @@ input:focus, input:hover, select:focus {
 /* line 182, ../scss/custom_theme.scss */
 .header-v2 .skip-link {
   background: transparent;
+  width:auto;
+  border:0;
+  font-size:14px;
+  line-height:normal;
+  height:auto;
 }
+
+.header-v2 .header-top-bar .skip-link {color:#fff;}
+
 /* line 184, ../scss/custom_theme.scss */
 .header-v2 .logo {
   width: 100%;
@@ -364,7 +370,7 @@ input:focus, input:hover, select:focus {
 }
 /* line 207, ../scss/custom_theme.scss */
 .header-v2 #header-cart.skip-active {
-  top: 31px;
+  top: 22px;
 }
 
 /* line 211, ../scss/custom_theme.scss */
@@ -451,7 +457,15 @@ input:focus, input:hover, select:focus {
   }
   /* line 259, ../scss/custom_theme.scss */
   .header-v2 .skip-link {
-    line-height: 20px;
+    line-height: normal;
+    font-size: 14px;
+    color: #fff;
+    text-transform: none;
+    display: inline-block;
+    vertical-align: text-bottom;
+    height: auto;
+    float: none;
+    padding: 0;
   }
 }
 @media only screen and (max-width: 770px) {
@@ -473,6 +487,7 @@ input:focus, input:hover, select:focus {
   /* line 275, ../scss/custom_theme.scss */
   .header .skip-links {
     background: #fff;
+    border:0;
   }
   /* line 276, ../scss/custom_theme.scss */
   .header .skip-search {
@@ -531,7 +546,7 @@ input:focus, input:hover, select:focus {
 }
 /* line 329, ../scss/custom_theme.scss */
 .ves-footer .footer {
-  background-color: #333333;
+  background-color: #281b14 !important;
   color: #ccc;
   border-top: 0;
 }
@@ -546,10 +561,10 @@ input:focus, input:hover, select:focus {
 }
 /* line 339, ../scss/custom_theme.scss */
 .ves-footer .ves-copyright {
-  background: #fff;
+  background: #1b120c;
   color: #696969;
   font-size: 14px;
-  padding: 15px 0 5px;
+  padding: 15px 0;
   text-transform: uppercase;
 }
 /* line 345, ../scss/custom_theme.scss */
@@ -715,11 +730,15 @@ input:focus, input:hover, select:focus {
 .widget-newsletter input {
   height: 40px !important;
   width: 300px;
+  border-radius:10px;
 }
 /* line 464, ../scss/custom_theme.scss */
 .widget-newsletter .actions {
   top: 0;
   right: 10px;
+  display:inline-block;
+  vertical-align: top;
+  margin: 0;
 }
 /* line 116, ../scss/bootstrap/_rtl.scss */
 .rtl .widget-newsletter .actions {
@@ -728,7 +747,7 @@ input:focus, input:hover, select:focus {
 }
 /* line 469, ../scss/custom_theme.scss */
 .widget-newsletter .actions button {
-  background: transparent !important;
+  background: #f7931e !important;
 
 
   font-size: 16px !important;

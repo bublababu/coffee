@@ -4564,7 +4564,7 @@ a.skip-link {
  */
 /* line 36, ../../../rwd/default/scss/layout/_header-cart.scss */
 .skip-cart:not(.skip-active):hover .icon {
-  background-position: -50px -95px;
+  background-position: -51px -100px;
 }
 /* line 41, ../../../rwd/default/scss/layout/_header-cart.scss */
 .skip-cart .icon {
@@ -4580,15 +4580,13 @@ a.skip-link {
 
   /* line 59, ../../../rwd/default/scss/layout/_header-cart.scss */
   #header-cart.skip-active {
-    background: #FBFBFB;
-    border: solid 1px #CCCCCC;
+    background: none;
     display: block;
     position: absolute;
     z-index: 200;
     top: 40px;
     right: 0;
     width: 320px;
-    background: white;
   }
 }
 /* -------------------------------------------- *
@@ -4599,12 +4597,12 @@ a.skip-link {
   -webkit-border-radius: 12px;
   border-radius: 12px;
   display: inline-block;
-  top: -6px;
+  top: 0;
   position: relative;
   z-index: 5;
   width: 22px;
   height: 22px;
-  background: rgba(254, 82, 82, 0.9);
+  background: #f7931e;
   color: #FFFFFF;
   font-size: 11px;
   line-height: 22px;
@@ -6049,6 +6047,8 @@ p.product-name a:hover {
 .product-view .product-shop .short-description {
   margin-bottom: 10px;
   clear: both;
+  font-size: 16px;
+  color: #333333;
 }
 /* line 100, ../../../rwd/default/scss/module/_catalog-product.scss */
 .product-view .product-shop .ratings {
@@ -11509,7 +11509,7 @@ div.paypal-logo span > img {
  * ============================================ */
 /* line 30, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart {
-  display: inline-block;
+  display: inline-block; float:right;
 }
 @media only screen and (max-width: 770px) {
   /* line 30, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
@@ -11526,6 +11526,7 @@ div.paypal-logo span > img {
 .header-minicart .empty {
   padding: 10px;
   text-align: center;
+  margin:0;
 }
 /* line 47, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .minicart-wrapper {
@@ -11569,15 +11570,16 @@ div.paypal-logo span > img {
 }
 /* line 56, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .block-subtitle {
-  color: #50A4CF;
+  color: #241b12;
   font-family: "Roboto", sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1.4;
   padding: 5px;
   text-align: center;
-  text-transform: uppercase;
   margin-bottom: 0px;
+  text-transform:uppercase;
+  border-bottom:1px solid #bfb9b4;
 }
 /* line 67, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .block-subtitle .close {
@@ -11589,7 +11591,7 @@ div.paypal-logo span > img {
   font-weight: normal;
   font-size: 30px;
   position: absolute;
-  top: -8px;
+  top: -2px;
   right: -3px;
 }
 /* line 80, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
@@ -11610,6 +11612,7 @@ div.paypal-logo span > img {
 /* line 93, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .mini-products-list li .product-details {
   position: relative;
+  color:#241b12;
 }
 /* line 100, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .product-details .product-name {
@@ -11666,7 +11669,7 @@ div.paypal-logo span > img {
 }
 /* line 154, ../../../rwd/default/scss/module/_checkout-cart-minicart.scss */
 .header-minicart .subtotal {
-  background-color: #DDDDDD;
+  background-color: #dad1cd;
   text-align: center;
   line-height: 2em;
 }
@@ -13882,10 +13885,11 @@ div.calendar table td.button {
 /* line 234, ../scss/module/_slideshow.scss */
 .iview-caption-v2 span {
   clear: both;
-  width: 65%;
-  margin-left: 10%;
-  display: block;
+  display: inline-block;
+  width: auto !important;
+  margin: 0 2px !important;
 }
+.iview-caption-v2 span span {margin:0 !important;}
 /* line 24, ../scss/bootstrap/_rtl.scss */
 .rtl .iview-caption-v2 span {
   margin-right: 10%;
@@ -13993,7 +13997,8 @@ div.calendar table td.button {
   /* line 325, ../scss/module/_slideshow.scss */
   .iview-caption span,
   .iview-caption-v2 span {
-    width: 60%;
+    width: 100%;
+    margin:0;
   }
   /* line 328, ../scss/module/_slideshow.scss */
   .iview-caption .main-text1,
@@ -14385,14 +14390,20 @@ div.calendar table td.button {
   display: block;
 }
 /* line 117, ../scss/module/_megamenu.scss */
-.ves-megamenu .navbar-nav > li > a span {
-  padding: 0 30px;
-  font-size: 14px;
+
+.ves-megamenu .navbar-nav > li > a span {padding:35px 0 0; background-position: center 0 !important; display:inline-block;}
+
+.ves-megamenu .navbar-nav > li > a span span {
+  padding: 0 27px;
+  font-size: 18px;
   color: #000000;
   background-color: transparent !important;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
 }
+
+.ves-megamenu .navbar-nav > li:first-child > a span span {padding:0 15px;}
+
 /* line 126, ../scss/module/_megamenu.scss */
 .ves-megamenu .navbar-nav > li > a:after {
   content: "";
@@ -14410,6 +14421,7 @@ div.calendar table td.button {
   transition: width 0.5s ease 0s, height 0.5s ease 0s;
   width: 4px;
   height: 2px;
+  display:none;
 }
 /* line 142, ../scss/module/_megamenu.scss */
 .ves-megamenu .navbar-nav > li > a:hover span, .ves-megamenu .navbar-nav > li > a:focus span, .ves-megamenu .navbar-nav > li > a:active span {
@@ -14419,16 +14431,18 @@ div.calendar table td.button {
 .ves-megamenu .navbar-nav > li > a .caret {
   border: 0;
   position: relative;
+  display:inline-block;
 }
 /* line 148, ../scss/module/_megamenu.scss */
 .ves-megamenu .navbar-nav > li > a .caret:before {
   content: "\f107";
   font-family: "FontAwesome";
+  font-size:16px;
   position: absolute;
-  top: -20px;
+  top: -23px;
   right: 10px;
   color: #333333;
-  font-weight: 400;
+  font-weight: bold;
 }
 /* line 116, ../scss/bootstrap/_rtl.scss */
 .rtl .ves-megamenu .navbar-nav > li > a .caret:before {
@@ -14755,6 +14769,8 @@ div.calendar table td.button {
   .ves-megamenu .navbar-nav li .dropdown-menu {
     transform: none !important;
     width: auto !important;
+    width: 100% !important;
+    padding: 0 0 0 40px!important;
   }
   /* line 421, ../scss/module/_megamenu.scss */
   .ves-megamenu .dropdown-submenu {

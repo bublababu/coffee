@@ -121,7 +121,9 @@ min-height: 0px;
 }
 
 .header-minicart .minicart-wrapper {
-background-color: #333333;
+background-color: #efe6e2;
+margin-top: 12px;
+border: 1px solid #CCCCCC;
 }
 .header-minicart .subtotal .label{
 color: black;
@@ -155,7 +157,9 @@ color: black;
 }
 
 .ves-megamenu .navbar-nav > li > a span{
-font-size: 19px;
+font-size: 18px;
+color: #3a2613 !important;
+font-weight:bold;
 }
 
 .header-v2 .logo .large{
@@ -220,16 +224,16 @@ color: #f7931e;
 color: #f7931e;
 }
 
-.skip-cart .count, .skip-link.skip-active .count{
+/*.skip-cart .count, .skip-link.skip-active .count{
 color: #f7931e;
-}
+}*/
 
 .header-minicart .subtotal .price{
 color: #f7931e;
 }
 
 .header-minicart .product-details .product-name a{
-color:white;
+color:#241b12;
 }
 
 .header-minicart .info-wrapper td{
@@ -509,7 +513,7 @@ text-align: center;
 	width: 100%;
 	text-align:center;
 	border-bottom: 2px solid #333333;
-	margin-bottom: 3em;
+	visibility:hidden;
 }
 .vertical-center {
 	padding-bottom:0.5em;
@@ -610,10 +614,7 @@ html, body {
 }
 /* Product Fonts */
 @media only screen and (max-width: 600px){
-	.product-block .product-info .product-name a {
-		font-weight: 700;
-		font-size: 0.8em;
-	}
+	
 }
 .product-block .product-info .product-name a {
     color: #333333;
@@ -626,11 +627,17 @@ html, body {
 /* SEARCH */
 
 #search {
-    max-width: 65%;
-	display: inline-block;
-	height: 35px;
-	margin-right: 0;
-	border-radius: 10px;
+    max-width: 100%;
+    display: inline-block;
+    height: 28px;
+    margin-right: 0;
+    border-radius: 4px;
+    background: rgba(219, 207, 204, 0.07);
+    border-color: #504941;
+    color: #918579;
+    font-size: 13px;
+    font-family: Cabin, sans-serif;
+    padding-right:30px;
 }
 div .button {
 		border-radius: 10px;
@@ -650,13 +657,12 @@ input[type=email]{
 @media only screen and (min-width: 770px){
 	.header-v2 #header-nav {
 		border-bottom: 0;
-		/*border-radius: 10px;*/
-		border-top: 2px solid #f7931e;
-		/*border-bottom: 1px solid #000000;*/
+		border:0;
+		margin-top:27px;
 	}
 	.ves-megamenu .navbar-nav > li {
 		float: left;
-		border-right: 1px solid #f7931e;
+		border-right: 0;
 		/* border-radius: 10px; */
 	}
 }
@@ -1166,7 +1172,7 @@ a:focus, a:hover {
     background: 0;
 }
 .ves-megamenu .navbar-nav > li > a .caret:before {
-    color: #fff;
+    color: #3a2613;
 }
 .dropdown-menu {
     display: inline-block !important;
@@ -1179,7 +1185,7 @@ a:focus, a:hover {
     margin-bottom: 0px !important;
 }
 .collapse {
-    display: inline-block !important;
+    display: inline-block !important; border:0 !important; padding:0 !important;
 }
 @media screen and (max-width: 600px) {
 	.profile-info-left {
@@ -1188,16 +1194,14 @@ a:focus, a:hover {
 	}
 	.form-search {
     text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
 	}
 /* Mobile Menu always on */
 	.header #header-nav.skip-content {
 	}
 /* END */
-	.ves-megamenu .dropdown-menu .mega-col .mega-col-inner li a span {
+	/*.ves-megamenu .dropdown-menu .mega-col .mega-col-inner li a span {
 	    color: #ffffff;
-	}
+	}*/
 }
 .header .wrap-container {
 
@@ -1208,10 +1212,8 @@ a:focus, a:hover {
 	font-size: 1.2em;
 }
 .skip-cart.no-count .count {
-	color: #371303;
-	font-weight: 400;
-	font-size: 1.2em;
-
+	font-weight:400;
+	font-family:Cabin, sans-serif;
 }
 .skip-nav {
     width: 100%;
@@ -1302,17 +1304,16 @@ body:not(.customer-account) .block:first-child .block-title {
     color: #fff;
     text-decoration: none;
     font-family: 'Noto Sans', sans-serif !Important;
-    height: 46px;
+    height: 41px;
     text-align: center;
     border-radius: 30px;
-    border: 5px solid #f0af29;
     line-height: 38px;
     text-transform: uppercase;
-    padding: 0px 30px;
+    padding: 0px 15px;
     float: none !important;
 }
-.widget-newsletter{
-	text-align: center;
+.widget-newsletter {
+	text-align: left;
 }
 .widget-newsletter input {
 
@@ -1350,31 +1351,292 @@ body:not(.customer-account) .block:first-child .block-title {
 #co-shipping-form ul.form-list > .control .checkbox {margin:3px 5px 0 0;}
 #co-shipping-form ul.form-list > .control label {padding: 0; line-height: normal; margin: 0;}
 
+
+/*====================================== New style 060717 =========================================*/
+
+.header-top-bar {background: #241b12; padding:6px 0;}
+.header-top-bar .inner {max-width:1260px; margin:0 auto;}
+.header-top-bar .inner .contact, .header-top-bar .inner .email, .header-top-bar .inner ul, .header-top-bar .inner ul li {display:inline-block; vertical-align:middle; color:#fff; margin:0;}
+
+.header-top-bar .inner .contact {font-size:13px; color: #f7931e;}
+.header-top-bar .inner .contact:before {content:""; width:21px; height:21px; display:inline-block; background:url(../images/icon_sprite.png) right 0 no-repeat; vertical-align: middle; margin-right: 8px;}
+.header-top-bar .inner .email {margin:0 30px; font-size:14px;}
+.header-top-bar .inner .email:before {content:""; width:24px; height:17px; display:inline-block; background:url(../images/icon_sprite.png) right -27px no-repeat; vertical-align: top; margin-right: 12px;}
+.header-top-bar .inner .email:hover {text-decoration:underline !important;}
+.header-top-bar .inner ul li {margin-right:30px;}
+.header-top-bar .inner ul li a {color:#fff; font-size:13px;}
+.header-top-bar .inner ul li a:hover {text-decoration:underline !important;}
+
+#search_mini_form {display:inline-block; position:relative; width:25%;}
+.logo-cont {padding:0 !important; text-align:left;}
+
+#search_mini_form .button {background:none; border-radius:0; overflow: hidden; display: inline-block; width: 17px; height: 17px; padding: 0; position: absolute; right: 9px; top: 5px;}
+#search_mini_form .button span {display:none;}
+#search_mini_form .button .fa-search:before {content:""; width:17px; height:17px; display:block; background:url(../images/icon_sprite.png) right -51px no-repeat;}
+
+#mainmenutop, .ves-megamenu .navbar-nav > li > a {background:#fff !important;}
+
+.ves-footer + .widget-static-block {position: absolute;left: 0; bottom: 0;}
+
+.panel-group p span {font-family:"Roboto", sans-serif !important;}
+.footer-container iframe {width:100%;}
+
+.hm-bgr .col-md-offset-1 {max-width: 1260px; margin: 0 auto;}
+.hm-bgr p {font-size:1.3em;}
+.hm-bgr .col-md-8 p {padding-right:20px;}
+
+.widget-newsletter .widget-inner .input-box {width:59%; display:inline-block; margin-right:5px;}
+.widget-newsletter .widget-inner .clearfix {display:none;}
+
+.widget-images .image-item img {width:100%; height:auto !important;}
+.widget-images .image-item .image-description a br {display:none;}
+.widget-newsletter .widget-inner .actions .fa-envelope {margin-right:5px;}
+
+.toplinkpan {display:inline-block;}
+
+#ves-footer .footer .navbar-nav.megamenu li {width:100%;}
+#ves-footer .footer .navbar-nav.megamenu a {padding:0; display:inline-block; font-size: 13px; text-transform: uppercase; line-height: 29px;}
+#ves-footer .footer .navbar-nav.megamenu a:hover {background:none;}
+#ves-footer .footer .navbar-nav.megamenu a .menu-icon {background:none !important;}
+#ves-footer .footer .navbar-nav.megamenu a .caret {display:none;}
+#ves-footer .footer .navbar-nav.megamenu .dropdown-menu {display:none !important;}
+#ves-footer .footer .navbar-nav.megamenu .open-child {display:none !important;}
+
+.minicart-wrapper .close {opacity:1;}
+.minicart-wrapper .product-details a {color: #241b12 !important;}
+
+.prod-description {display: inline-block; width: 60%; padding: 0 15px; font-size: 16px;}
+.prod-description .block-title strong {font-size: 16px; color: #333; font-family: Cabin, sans-serif;}
+.prod-description .more_descript {float: right;  margin: 5px 0 0 0; text-decoration: underline !important;}
+.prod-description .more_descript:hover {color: #342014 !important;}
+.prod-description .more_descript:focus {color: #f7931e !important;}
+.youtube_fbcomnt {margin: 40px 0;}
+.youtube {display: inline-block; vertical-align: top; width:48%;}
+.youtube iframe {width: 100% !important; height: 327px;}
+.fbcomnt {background: #efe6e2; padding: 15px; display: inline-block !important; width: 50%; float:right;}
+.fb_iframe_widget_fluid span {background:#fff;}
+.youtube_fbcomnt:after {content:""; display:table; clear:both;}
+
+
+/*================================== Coffee service page new ====================================*/
+
+.cms-kavos-aparatu-remontas .main-container, .cms-kavos-aparatu-remontas .main-container .container {max-width:100%;}
+.cms-kavos-aparatu-remontas .main-container .user-profile .row {max-width:1260px; margin:0 auto !important;}
+
+.cms-kavos-aparatu-remontas .contact-info-box {float: left; width: 65%;}
+.cms-kavos-aparatu-remontas .contact-info-box h1 {color: #333 !important; margin-top:30px;}
+.cms-kavos-aparatu-remontas .contact-info-box .location-map {width: 47%; display: inline-block; vertical-align: top;}
+.cms-kavos-aparatu-remontas .contact-info-box .location-map iframe {width:100%;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form {display:inline-block; vertical-align:top; width:50%; text-align:center; position:relative; padding-left:40px;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form h3 {text-align:left; font-size:26px; margin-bottom:20px; margin-top:0;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form .mand-text {position: absolute; top: 41px; right: 3px; font-size: 14px; color: #f10e14;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form {text-align:center;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form label {font-weight:normal; font-size:15px; margin-bottom:0; float:left; text-align:left;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form label span {color: #f10e14; padding-left:7px;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form input {height:35px; border-radius:10px; border:1px solid #C0C0C0; padding:0 8px; margin-bottom:12px; width:100%;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form textarea {max-width:100%; height:71px; border-radius:10px; border:1px solid #C0C0C0; margin-bottom:12px; resize:none;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form .button {font-size:15px; padding:8px 18px;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form .button:hover {background: #3a2613;}
+.cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form form .validation-advice {margin: 0; text-align: right; position: relative; top: -12px; color: #f10e14;}
+
+.cms-kavos-aparatu-remontas .profile-info-box {margin-top: -92px; float: right; width: 32%; text-align:center;}
+.cms-kavos-aparatu-remontas .profile-info-box img.avatar {border: 2px solid #fff;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info {margin-top:15px;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media .fa {width: 40px; height: 40px; background: #f7931e; border-radius: 50%; line-height: 40px; color: #fff; font-size: 25px;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media .fa.fa-phone {font-size:30px;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media .fa.fa-envelope {font-size:24px;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media span {font-size:22px;}
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.phone span,
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.email span {font-weight:bold; font-size:30px;}
+/*.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media .fa-home + .media-body span span,*/
+.cms-kavos-aparatu-remontas .profile-info-box .contact-info .media .fa-check + .media-body span span {display:block;}
+
+.cms-kavos-aparatu-remontas .faqHeader {margin:0 0 20px; line-height:normal;}
+.cms-kavos-aparatu-remontas .panel-group .panel {margin-bottom:15px;}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading {color: #fff; background-color: #3a2613; padding:0;}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading > .panel-title > a {padding:10px 15px; display:block;}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading > .panel-title > a .fa {float:right; -webkit-transition: all 0.2s ease-out 0s; -moz-transition: all 0.2s ease-out 0s; transition: all 0.2s ease-out 0s;}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading > .panel-title > a .fa:before {color:#f7931e;}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading.expanded > .panel-title > a .fa {transform:rotate(90deg);}
+.cms-kavos-aparatu-remontas .panel-default>.panel-heading+.panel-collapse>.panel-body {border:0; font-size:16px;}
+.cms-kavos-aparatu-remontas .profile-info-right .tab-content {padding-bottom:0;}
+.cms-kavos-aparatu-remontas .profile-info-right .media.activity-item {margin-bottom:0;}
+
+
+/*================================== Coffee service page new ====================================*/
+
+
+@media (min-width: 768px){
+    .navbar-collapse.collapse {max-width: 1260px; margin: 0 auto; text-align: right; padding:0;}
+    .main-nav {padding:0 !important;}
+    .fb_iframe_widget_fluid span {height: 290px !important; overflow-y: auto;}
+}
+
+/*====================================== New style 060717 =========================================*/
+
+@media screen and (max-width: 1300px) {
+    .ves-megamenu .navbar-nav > li > a span span {font-size:15px; padding:0 22px;}
+    .logo-cont {width:20% !important;}
+    .main-nav {width:80% !important;}
+}
+
 @media screen and (max-width: 1280px) {
-    .main-container, .container, .wrap-container, .page-header, .footer-container {padding: 0 20px !important;}
+    .main-container, .container, .page-header, .footer-container {padding: 0 20px !important;}
+    .cms-kavos-aparatu-remontas .main-container, .cms-kavos-aparatu-remontas .main-container .container {padding:0 !important;}
+    .page-header-container .container {padding: 0 10px !important}
+    
+    .header-v2 .skip-link {margin-left:0 !important;}
+    .header-top-bar .inner .contact:before {margin:0 0 0 8px;}
+}
+
+@media screen and (max-width: 1240px) {
+    #search_mini_form {width:20%;}
+}
+
+@media screen and (max-width: 1159px) {
+     .header-v2 #header-nav {margin-top:17px;}
+     .header-v2 .logo .large {height:auto;}
+     .header-top-bar .inner .email {margin:0 20px;}
+     .header-top-bar .inner ul li {margin-right:20px;}
+     .header-top-bar .inner ul li a {font-size:12px;}
+     .header-top-bar .inner .email {font-size:13px;}
+     #search_mini_form {width:18%;}
+     
+     .cms-kavos-aparatu-remontas .contact-info-box h1 {font-size:30px;}
+     .cms-kavos-aparatu-remontas .contact-info-box h2 {font-size:25px;}
+     .cms-kavos-aparatu-remontas .profile-info-box h2 {font-size:25px;}
+     .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form h3 {font-size:19px;}
+}
+
+@media screen and (min-width:768px) and (max-width: 959px) {
+    .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form h3 {margin-bottom:8px;}
+    .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form .mand-text {position:static; float:none; display:block; text-align:left; margin-bottom:8px;}
+}
+
+@media screen and (min-width: 1036px) {
+    .lnk-collapse {display:none;}
+    .skip-links.main-nav {display:none;}
+}
+
+@media screen and (min-width:771px) and (max-width: 1035px) {
+    span.open-child:after {content: "+"; font-size: 20px; text-align: center; background: transparent; opacity: 1;}
+    .over > span.open-child:after {content: "\2212";}
+    
+    .dropdown-menu {position:static !important; display:none !important;}
+    .dropdown-menu.in {position:static !important; display:block !important; width: 100%; box-shadow: none; padding: 0; padding-left: 40px;}
+}
+
+@media screen and (max-width: 1035px) {
+    .toplinkpan {display:none;}
+    .header-top-bar {text-align:center; position:relative;}
+    #search_mini_form {width:50%;}
+    .lnk-collapse {color: #fff; line-height: normal; position: absolute; left: 0; top: 0; background: #3e362e; display: block; width: 40px; height: 100%; cursor:pointer;}
+    .lnk-collapse .fa-plus {margin-top:12px;}
+    .lnk-collapse.active .fa-plus {transform:rotate(45deg);}
+    .toplinkpan.open {display: block; position: absolute; left: 0; top: 40px; width: 100%; z-index: 100; background: #3e362e; padding:3px 0;}
+    .main-nav {width:100% !important;}
+    .main-nav #header-nav {display:none;}
+    .main-nav #header-nav.skip-active {display:block; margin-top:5px; padding:0; border:0;}
+    .skip-links.main-nav {display:block; position: absolute; top: 25px; right: 20px; width: auto !important;}
+    .skip-links.main-nav a {color:#371303; font-size:18px;}
+    .skip-links.main-nav a .fa-bars {vertical-align:top;}
+    .container.nav-collapse-blk {position:static;}
+    .ves-megamenu .navbar-nav {float:left; width:100%; text-align:left; margin-left:0; margin-right:0;}
+    .ves-megamenu .navbar-nav > li {width:100%; border-top: 1px solid #ccc; padding: 5px 0 2px; border-radius: 0; position:relative; border-right:0 !important;}
+    .ves-megamenu .navbar-nav > li .open-child {position: absolute; right: 0; top: 0; z-index: 100; display:block !important;}
+    .ves-megamenu .navbar-nav > li > a .caret {display:none;}
+    .ves-megamenu .navbar-nav > li > a span {padding: 0 0 0 37px; background-position: 0 0 !important; display: block;}
+    .ves-megamenu .navbar-nav > li:last-child {border-top: 1px solid #ccc;}
+    #header-nav .menu-footer {padding-bottom:0;}
+    
+    
 }
 
 @media screen and (max-width: 991px) {
     .ves-megamenu .navbar-nav > li > a .caret:before {display:block !important;}
+    .footer-container .col-sm-6 {margin-bottom:20px;}
+    .profile-header-background.hidden-sm {display:block !important;}
+    .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media span {font-size:18px;}
+    .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.phone span,
+    .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.email span {font-size:25px;}
+}
+
+@media screen and (max-width: 910px) {
+    .prod-description {padding:0; width:100%;}
+    .cms-kavos-aparatu-remontas .panel-default>.panel-heading > .panel-title > a {padding-right:30px; line-height:normal; font-size:14px; position:relative;}
+    .cms-kavos-aparatu-remontas .panel-default>.panel-heading > .panel-title > a .fa {position: absolute; top: 50%; right: 12px; margin-top: -7px;}
+}
+
+@media screen and (max-width: 800px) {
+    .col-md-9.main-nav {display:block !important;}
+    .col-md-9.main-nav .skip-active {display:block !important;}
 }
 
 @media screen and (min-width: 768px) and (max-width:991px) {
     .footer-container .col-sm-6 {float:none; display:inline-block; width:48%; vertical-align:top;}
 }
 
+@media screen and (min-width: 768px) {
+    .cms-home .new-products .products-row .col-sm-6 {width:25%;}
+}
+
+@media screen and (max-width: 768px) {
+    .cms-kavos-aparatu-remontas .profile-info-right {top:0;}
+}
+
 @media screen and (max-width: 767px) {
     .ves-footer .block .block-title {padding:0 !important; margin-bottom:0 !important;}
     .ves-footer .block .block-content .panel-group {margin-bottom:0; }
-    .ves-footer .block .block-content .panel-group ul {margin-bottom:0;}
-
+    .ves-footer .block .block-content .panel-group ul {margin:0;}
+    .top-image-sect {padding:0 !important;}
+    .top-image-sect .col-md-4 {width:100%;}
+    .logo-cont {width:38% !important;}
+    .youtube, .fbcomnt {width:100%;}
+    .youtube {margin-bottom:20px;}
+    
+    .cms-kavos-aparatu-remontas .contact-info-box, .cms-kavos-aparatu-remontas .profile-info-box,
+    .cms-kavos-aparatu-remontas .contact-info-box .location-map,
+    .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form {width:100%;}
+    
+    .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form{padding:30px 0 0;}
+    .cms-kavos-aparatu-remontas .contact-info-box .cont-feed-form .mand-text {top:60px;}
+    .cms-kavos-aparatu-remontas .profile-info-box img.avatar {width:180px;}
+    .cms-kavos-aparatu-remontas .contact-info-box {text-align:center;}
+    
+    .product-block .product-info .product-name a {font-weight: 700;font-size: 0.8em;}
+    .product-block .product-info .price-box .price {font-size:14px;}
+    .cms-home .new-products .products-row .col-xs-6 {width:25%;}
+    
 }
 
 @media screen and (max-width: 568px) {
     #opc-billing .form-list ul li, #opc-shipping .form-list ul li {float:none; width:100%;}
     #opc-billing .form-list ul li:nth-child(2n+1), #opc-shipping .form-list ul li:nth-child(2n+1) {margin-right:0;}
+    
+    .cms-kavos-aparatu-remontas .contact-info-box h1 {font-size:25px;}
+    .cms-kavos-aparatu-remontas .contact-info-box h2 {font-size:20px;}
+    .cms-kavos-aparatu-remontas .profile-info-box h2 {font-size:22px;}
+    .cms-kavos-aparatu-remontas .faqHeader {font-size:22px;}
+    .cms-kavos-aparatu-remontas .profile-info-box img.avatar {width:150px;}
+    
+}
+
+@media screen and (max-width: 767px) {
+    .logo-cont {width: 200px !important;}
+}
+
+@media screen and (max-width: 670px) {
+    .product-block .product-info .product-name {height:50px;}
+    .cms-home .new-products .products-row .col-xs-6 {width:50%;}
+}
+
+@media screen and (max-width: 480px) {
+    .product-block .product-info .product-name {height:auto;}
+    .cms-home .new-products .products-row .col-xs-6 {width:100%;}
 }
 
 @media screen and (max-width: 368px) {
     .opc .section .step-title h2 {font-size:13px;}
     .checkout-onepage-index .main-container {padding:0 16px !important;}
+    .logo-cont {width: 150px !important;}
 }

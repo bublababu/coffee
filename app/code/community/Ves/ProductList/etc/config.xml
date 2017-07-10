@@ -85,7 +85,7 @@
     </crontab>
     <global>
         <events>
-            <controller_front_init_routers>
+            <!--<controller_front_init_routers>
                 <observers>
                     <ves_produlist_observer>
                         <type>singleton</type>
@@ -93,7 +93,7 @@
                         <method>initControllerRouters</method>
                     </ves_produlist_observer>
                 </observers>
-            </controller_front_init_routers>
+            </controller_front_init_routers>-->
             <catalog_product_save_after>
                 <observers>
                     <ves_productlist_detect_product_changes>

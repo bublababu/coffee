@@ -356,9 +356,9 @@ if ($useRichSnippets){
                             if(jQuery('#header-cart')){
                                 jQuery('#header-cart').html(data.minicartContent);
                             }
-                            if(jQuery('.top-minicart .count')){
-                                jQuery('.top-minicart .count').show();
-                                jQuery('.top-minicart .count').html(data.cart['items_qty']);
+                            if(jQuery('.header-minicart .count')){
+                                jQuery('.header-minicart .count').show();
+                                jQuery('.header-minicart .count').html(data.cart['items_qty']);
                             }
                             jQuery.fancybox({ content: data.message });
                             jQuery('#ajax_loader').hide();
@@ -442,26 +442,87 @@ if ($useRichSnippets){
         <?php } ?>
     //]]>
 </script>
+    <div class="prod-description">
+        <div class="block-title"><strong><span>Apra&scaron;ymas</span></strong></div>
+        <div class="prod-descript-content">
+        <?php $getDescription = $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description');
+        if(strlen(strip_tags($getDescription)) > 450){
+            $getLessDescription = substr($getDescription, 0, 450);
+            ?>
+            <div class="display-prod-less-descript"><?php echo strip_tags($getLessDescription).'...';?></div>
+            <div class="display-prod-full-descript" style="display:none;"><?php echo $getDescription;?></div>
+            <a href="javascript:void(0)" class="more_descript less">Show more</a>
+            
+            <script type="text/javascript">
+            jQuery('body').on( "click", ".more_descript", function() {
+                if(jQuery(this).hasClass('less')){
+                    jQuery('.display-prod-full-descript').show();
+                    jQuery('.display-prod-less-descript').hide();
+                    jQuery(this).removeClass('less');
+                    jQuery(this).html('Show less');
+                }else{
+                    jQuery(this).addClass('less');
+                    jQuery(this).html('Show more');
+                   jQuery('.display-prod-less-descript').show();
+                   jQuery('.display-prod-full-descript').hide();
+                }
+            });
+            </script>
+            
+            <?php
+        }else{
+            echo '<div class="display-prod-full-descript">'.$getDescription.'</div>';
+        }
+        ?>
+        </div>
+    </div>
 </div>
+<div class="youtube_fbcomnt">
+    <div class="youtube">
+        <?php $embed_link = str_replace("watch?v=","embed/",$_product->getvideo_link())?>
+        <iframe width="560" height="315" src="<?php echo $embed_link;?>" frameborder="0" allowfullscreen></iframe>
+    </div> 
+    <div class="fbcomnt">
+        <?php echo Mage::getStoreConfig('themesettings/product_page/customtab_content');?>
+    </div>    
+</div>    
+
 <?php if($route != 'ajax'){ ?>
-<?php if(isset($tabs_mode)){ ?>
+<?php /*if(isset($tabs_mode)){ ?>
 <div class="product-collateral toggle-content tabs <?php if($tabs_mode == 'accordion'){ ?>tabs-accodion<?php } ?>">
     <?php
     $detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml');
     ?>
     <?php if ($detailedInfoGroup):?>
         <dl id="collateral-tabs" class="collateral-tabs">
-            <?php foreach ($detailedInfoGroup as $alias => $html): Mage::log($alias); ?>						<?php if ($this->getChildData($alias, 'title') != "Related Products"):?>						
+            <?php foreach ($detailedInfoGroup as $alias => $html): Mage::log($alias); ?>
+            <?php if ($this->getChildData($alias, 'title') != "Related Products"):?>						
                 <dt class="tab"><span><?php echo $this->__($this->getChildData($alias, 'title')); ?></span></dt>
                 <dd class="tab-container">
                     <div class="tab-content"><?php echo $html ?></div>
-                </dd>				<?php endif; ?>
+                </dd>
+            <?php endif; ?>
             <?php endforeach;?>
 
         </dl>
     <?php endif; ?>
 </div>
-<?php } ?><div> <?php    $detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml');    ?>		<?php if ($detailedInfoGroup):?>        <dl id="collateral-tabs" class="collateral-tabs">            <?php foreach ($detailedInfoGroup as $alias => $html): Mage::log($alias); ?>						<?php if ($this->getChildData($alias, 'title') == "Related Products"):?>						               								<div class="widget-productlist-carousel owlproductcarousel block  " id="">					<div class="block-title"><strong> <span><?php echo $this->__($this->getChildData($alias, 'title')); ?></span> </strong></div>				</div>                <dd class="tab-container">                    <div class="tab-content"><?php echo $html ?></div>                </dd>				<?php endif; ?>				            <?php endforeach;?>        </dl>    <?php endif; ?></div>
+<?php }*/ ?>
+<div>
+<?php    $detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml');    ?>
+<?php if ($detailedInfoGroup):?>
+<dl id="collateral-tabs" class="collateral-tabs">
+<?php foreach ($detailedInfoGroup as $alias => $html): Mage::log($alias); ?>
+    <?php if ($this->getChildData($alias, 'title') == "Related Products"):?>
+        <div class="widget-productlist-carousel owlproductcarousel block  " id="">
+            <div class="block-title"><strong> <span><?php echo $this->__($this->getChildData($alias, 'title')); ?></span> </strong></div>
+        </div>
+        <dd class="tab-container"><div class="tab-content"><?php echo $html ?></div></dd>
+    <?php endif; ?>
+    <?php endforeach;?>
+</dl>
+<?php endif; ?>
+</div>
 
 <?php echo $this->getChildHtml('upsell_products') ?>
 <?php echo $this->getChildHtml('related_products_carousel') ?>

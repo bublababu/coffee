@@ -414,7 +414,7 @@ class Ves_Megamenu_Block_Top extends Ves_Megamenu_Block_List {
 
 					$output .= '<li class="parent dropdown '.$menu_class.'" '.$this->renderAttrs($menu).'>';
 					if(!$menu->getIsGroup()) {
-						$output .= '<span class="open-child hidden-md hidden-lg hidden-sm">'.$this->__("(open)").'</span>';
+						$output .= '<span class="open-child hidden-md hidden-lg hidden-sm"></span>';
 					}
 
 					$output .= '<a class="dropdown-toggle" data-toggle="dropdown" title="'.$menu->getTitle().'" href="'.$this->getLink( $menu ).'" '.$menu_target.'>';
@@ -636,7 +636,7 @@ class Ves_Megamenu_Block_Top extends Ves_Megamenu_Block_List {
 
 		$output = '<li class="'.$menu->getMenuClass().' parent '.$class.' " '.$this->renderAttrs($menu).'>';
 		if(!$menu->getIsGroup() || !$menu->getIsGroupMenu()) {
-			$output .= '<span class="open-child hidden-md hidden-lg hidden-sm">'.$this->__("(open)").'</span>';
+			$output .= '<span class="open-child hidden-md hidden-lg hidden-sm"></span>';
 		}
 		$output .= '<a href="'.$this->getLink( $menu ).'" class="dropdown-toggle" title="'.$menu->getTitle().'" data-toggle="dropdown" '.$menu_target.'>';
 
@@ -735,7 +735,7 @@ class Ves_Megamenu_Block_Top extends Ves_Megamenu_Block_List {
 			$output .= '<li class="parent dropdown-submenu'.$menu_class.'" '.$this->renderAttrs($menu). '>';
 			if( $menu->getShowTitle() ){
 				if(!$menu->getIsGroup()) {
-					$output .='<span class="open-child hidden-md hidden-lg hidden-sm">'.$this->__("(open)").'</span>';
+					$output .='<span class="open-child hidden-md hidden-lg hidden-sm"></span>';
 				}
 				
 				$output .= '<a class="dropdown-toggle" data-toggle="dropdown" title="'.$menu->getTitle().'" href="'.$this->getLink( $menu ).'" '.$menu_target.'>';
