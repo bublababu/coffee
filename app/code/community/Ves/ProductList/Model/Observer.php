@@ -56,10 +56,17 @@ class Ves_ProductList_Model_Observer  extends Varien_Object
 			if (!Mage::app()->isInstalled()) return;
 
 			$identifier = trim($request->getPathInfo(), '/');
+			
+				if($identifier=='')$identifier='home';
+			
 			$condition = new Varien_Object(array(
 				'identifier' => $identifier,
 				'continue'   => true
 				));
+			
+		
+			
+			
 			Mage::dispatchEvent('productlist_controller_router_match_before', array(
 				'router'    => $this,
 				'condition' => $condition
