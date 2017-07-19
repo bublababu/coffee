@@ -39,11 +39,11 @@
 	        <action method="addItem"><type>skin_css</type><name>css/animate.css</name><params/></action>
 
 	        <!-- Custom font -->
-	        <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic</href></action>
-	        <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic</href></action>
+	        <action method="addLinkRel"><rel>stylesheet</rel><href>https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic</href></action>
+	        <action method="addLinkRel"><rel>stylesheet</rel><href>https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic</href></action>
 
 	        <action method="addJs"><script>ves/jquery/frontend.js</script></action>
-	        <action method="addItem"><type>skin_js</type><name>/js/common.js</name><params/></action>
+	        <action method="addItem"><type>skin_js</type><name>js/common.js</name><params/></action>
 
 	        <action method="addCss"><stylesheet helper="themesettings/data/getDesignFile" /></action>
 	    </reference>
@@ -145,7 +145,7 @@
 	    <!-- Footer scripts ====================================================================== -->
 	    <reference name="theme_body_end">
 	    	<block type="page/html_head" name="footer.scripts" as="footer_scripts" template="page/html/footer_assets.phtml" before="-">
-	    		<action method="addItem"><type>skin_js</type><name>js/common.js</name></action>
+	    		<!--<action method="addItem"><type>skin_js</type><name>js/common.js</name></action>-->
 	    	</block>
 	    </reference>
 

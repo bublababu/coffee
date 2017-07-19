@@ -208,7 +208,6 @@ if ($useRichSnippets){
 
                     <meta itemprop= "url" content= "<?php echo $_product->getUrlModel()->getUrl($_product, array('_ignore_category’=>true'));?>)" />
                     <meta itemprop= "sku" content= "<?php echo $_product->getSku() ?>" />
-
                     <?php // SKU Block ?>
                     <?php if($sku = $_product->getSku()){ ?>
                     <?php  if($ves->getConfig("product_page/show_sku")){  ?>
@@ -221,7 +220,6 @@ if ($useRichSnippets){
                         <meta itemprop="productID" content="sku:<?php echo $sku; ?>" />
                     <?php endif; ?>
                     <?php } ?>
-
                     <div class="price-info">
                         <?php echo $this->getPriceHtml($_product); ?>
                         <?php echo $this->getChildHtml('bundle_prices') ?>
@@ -234,19 +232,15 @@ if ($useRichSnippets){
                     </div>
 
                     <?php echo $this->getChildHtml('alert_urls') ?>
-
                     <?php if ($_product->getShortDescription()):?>
                         <div class="short-description">
                             <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                         </div>
                     <?php endif;?>
-
                     <?php echo $this->getChildHtml('other');?>
-
                     <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                         <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                     <?php endif;?>
-
                     <?php // Countdown Timer Block ?>
                     <?php if( isset($_product) && $_product->getFinalPrice() < $_product->getPrice() && $show_countdowntimer && $_product->getSpecialToDate()!=''){
                         $date1 = date('G:i:s', strtotime($_product->getSpecialToDate()));
@@ -274,49 +268,80 @@ if ($useRichSnippets){
                             </script>
                         </div>
                         <?php } ?>
-
-                    </div>
-
-                    <div class="add-to-cart-wrapper">
-                        <div <?php if ($useRichSnippets) echo $helperSnippets->getOfferItemscope(); ?>>
-                            <div class="product-type-data<?php echo $productTypeClasses; ?>">
-                                <?php echo $this->getChildHtml('product_type_data'); ?></div>
-                                <?php echo $this->getTierPriceHtml(); ?>
-                                <?php echo $priceProperties; ?>
+                        
+                        
+                        <?php /* ============================= ADD TO CART BUTTON SEC START ================= */?>
+                        <div class="add-to-cart-wrapper">
+                            <div <?php if ($useRichSnippets) echo $helperSnippets->getOfferItemscope(); ?>>
+                                <div class="product-type-data<?php echo $productTypeClasses; ?>">
+                                    <?php echo $this->getChildHtml('product_type_data'); ?>
+                                </div>
+                                    <?php echo $this->getTierPriceHtml(); ?>
+                                    <?php echo $priceProperties; ?>
                             </div> <?php //end: offers ?>
-
-
-                            <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
-                                <div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
-                            <?php endif; ?>
-
-
-                            <?php if (!$this->hasOptions()):?>
-                                <div class="add-to-box">
-                                    <?php if($_product->isSaleable()): ?>
-                                        <?php echo $this->getChildHtml('addtocart') ?>
-                                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                                            <span class="or"><?php echo $this->__('OR') ?></span>
+    
+    
+                                <?php if ($extrahint_html = $this->getChildHtml('extrahint')): //qty increments ?>
+                                    <div class="extrahint-wrapper"><?php echo $extrahint_html; ?></div>
+                                <?php endif; ?>
+    
+    
+                                <?php if (!$this->hasOptions()):?>
+                                    <div class="add-to-box">
+                                        <?php if($_product->isSaleable()): ?>
+                                            <?php echo $this->getChildHtml('addtocart') ?>
+                                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                                                <span class="or"><?php echo $this->__('OR') ?></span>
+                                            <?php endif; ?>
                                         <?php endif; ?>
-                                    <?php endif; ?>
-                                    <?php echo $this->getChildHtml('addto') ?>
-                                    <?php echo $this->getChildHtml('sharing') ?>
-                                </div>
-                                <?php echo $this->getChildHtml('extra_buttons') ?>
-                            <?php elseif (!$_product->isSaleable()): ?>
-                                <div class="add-to-box">
-                                    <?php echo $this->getChildHtml('addto') ?>
-                                    <?php echo $this->getChildHtml('sharing') ?>
-                                </div>
-                            <?php endif; ?>
+                                        <?php echo $this->getChildHtml('addto') ?>
+                                        <?php echo $this->getChildHtml('sharing') ?>
+                                    </div>
+                                    <?php echo $this->getChildHtml('extra_buttons') ?>
+                                <?php elseif (!$_product->isSaleable()): ?>
+                                    <div class="add-to-box">
+                                        <?php echo $this->getChildHtml('addto') ?>
+                                        <?php echo $this->getChildHtml('sharing') ?>
+                                    </div>
+                                <?php endif; ?>
                         </div>
-
+                        <?php /* ============================= ADD TO CART BUTTON SEC END ================= */?>
                         <?php echo $this->getChildHtml('related_products') ?>
 
                         <div class="clearer"></div>
                         <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                             <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
                         <?php endif;?>
+                        
+                        <div class="prod-description">
+                            <div class="block-title"><strong><span>Apra&scaron;ymas</span></strong></div>
+                            <div class="prod-descript-content">
+                            <?php $getDescription = $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description');?>
+                            <div class="display-prod-less-descript"><?php echo $getDescription;?></div>
+                            <div class="display-prod-full-descript" style="display:none;"><?php echo $getDescription;?></div>
+                            <a href="javascript:void(0)" class="more_descript less">Show more</a>
+                            <script type="text/javascript">
+                            jQuery('body').on( "click", ".more_descript", function() {
+                                if(jQuery(this).hasClass('less')){
+                                    jQuery('.display-prod-full-descript').show();
+                                    jQuery('.display-prod-less-descript').hide();
+                                    jQuery(this).removeClass('less');
+                                    jQuery(this).html('Show less');
+                                }else{
+                                    jQuery(this).addClass('less');
+                                    jQuery(this).html('Show more');
+                                   jQuery('.display-prod-less-descript').show();
+                                   jQuery('.display-prod-full-descript').hide();
+                                }
+                            });
+                            </script>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                        
                     </form>
                     <script type="text/javascript">
         //<![CDATA[
@@ -442,46 +467,15 @@ if ($useRichSnippets){
         <?php } ?>
     //]]>
 </script>
-    <div class="prod-description">
-        <div class="block-title"><strong><span>Apra&scaron;ymas</span></strong></div>
-        <div class="prod-descript-content">
-        <?php $getDescription = $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description');
-        if(strlen(strip_tags($getDescription)) > 450){
-            $getLessDescription = substr($getDescription, 0, 450);
-            ?>
-            <div class="display-prod-less-descript"><?php echo strip_tags($getLessDescription).'...';?></div>
-            <div class="display-prod-full-descript" style="display:none;"><?php echo $getDescription;?></div>
-            <a href="javascript:void(0)" class="more_descript less">Show more</a>
-            
-            <script type="text/javascript">
-            jQuery('body').on( "click", ".more_descript", function() {
-                if(jQuery(this).hasClass('less')){
-                    jQuery('.display-prod-full-descript').show();
-                    jQuery('.display-prod-less-descript').hide();
-                    jQuery(this).removeClass('less');
-                    jQuery(this).html('Show less');
-                }else{
-                    jQuery(this).addClass('less');
-                    jQuery(this).html('Show more');
-                   jQuery('.display-prod-less-descript').show();
-                   jQuery('.display-prod-full-descript').hide();
-                }
-            });
-            </script>
-            
-            <?php
-        }else{
-            echo '<div class="display-prod-full-descript">'.$getDescription.'</div>';
-        }
-        ?>
-        </div>
-    </div>
+    
 </div>
 <div class="youtube_fbcomnt">
+    <?php if(!empty($_product->getvideo_link())){?>
     <div class="youtube">
         <?php $embed_link = str_replace("watch?v=","embed/",$_product->getvideo_link())?>
         <iframe width="560" height="315" src="<?php echo $embed_link;?>" frameborder="0" allowfullscreen></iframe>
-    </div> 
+    </div>
+    <?php }?>
     <div class="fbcomnt">
         <?php echo Mage::getStoreConfig('themesettings/product_page/customtab_content');?>
     </div>    

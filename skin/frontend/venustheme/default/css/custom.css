@@ -1405,15 +1405,15 @@ body:not(.customer-account) .block:first-child .block-title {
 .minicart-wrapper .close {opacity:1;}
 .minicart-wrapper .product-details a {color: #241b12 !important;}
 
-.prod-description {display: inline-block; width: 60%; padding: 0 15px; font-size: 16px;}
+.prod-description {display: inline-block; width: 100%; padding: 0; font-size: 16px;}
 .prod-description .block-title strong {font-size: 16px; color: #333; font-family: Cabin, sans-serif;}
 .prod-description .more_descript {float: right;  margin: 5px 0 0 0; text-decoration: underline !important;}
 .prod-description .more_descript:hover {color: #342014 !important;}
 .prod-description .more_descript:focus {color: #f7931e !important;}
 .youtube_fbcomnt {margin: 40px 0;}
-.youtube {display: inline-block; vertical-align: top; width:48%;}
+.youtube {display: inline-block; vertical-align: top; width:50%; padding-right:25px; float:left;}
 .youtube iframe {width: 100% !important; height: 327px;}
-.fbcomnt {background: #efe6e2; padding: 15px; display: inline-block !important; width: 50%; float:right;}
+.fbcomnt {background: #efe6e2; padding: 15px; display: inline-block !important; width: 50%; float:left;}
 .fb_iframe_widget_fluid span {background:#fff;}
 .youtube_fbcomnt:after {content:""; display:table; clear:both;}
 
@@ -1462,8 +1462,24 @@ body:not(.customer-account) .block:first-child .block-title {
 .cms-kavos-aparatu-remontas .profile-info-right .tab-content {padding-bottom:0;}
 .cms-kavos-aparatu-remontas .profile-info-right .media.activity-item {margin-bottom:0;}
 
+.display-prod-less-descript {overflow: hidden; height: 110px; display: block;}
+.product-essential .add-to-cart-wrapper {width:100%; padding:15px 0 0;}
+
+
+.ves-megamenu .dropdown-menu .row:last-child .mega-col.col-sm-6 .mega-col.col-sm-6 {padding:0; width:100%;}
+.ves-megamenu .dropdown-menu .row:last-child .mega-col.col-sm-6 .mega-col.col-sm-6 ul li .menu-title {border:0; padding:0;}
+
 
 /*================================== Coffee service page new ====================================*/
+
+.fancybox-inner .popup_avaiable {text-align:center;}
+.fancybox-inner .popup_avaiable a {display: inline-block; margin-bottom: 10px;}
+.fancybox-inner .popup_avaiable font {display: inline-block;}
+.fancybox-inner .popup_avaiable .action_button ul {margin-bottom:0; font-size:0;}
+.fancybox-inner .popup_avaiable .action_button ul li {display:inline-block; margin:0 5px; vertical-align:top;}
+
+
+/*=========================================== Responsive ===========================================*/
 
 
 @media (min-width: 768px){
@@ -1491,6 +1507,7 @@ body:not(.customer-account) .block:first-child .block-title {
 
 @media screen and (max-width: 1240px) {
     #search_mini_form {width:20%;}
+    .products-grid .product-block .product-wrapp {height:auto !important;}
 }
 
 @media screen and (max-width: 1159px) {
@@ -1562,6 +1579,8 @@ body:not(.customer-account) .block:first-child .block-title {
     .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media span {font-size:18px;}
     .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.phone span,
     .cms-kavos-aparatu-remontas .profile-info-box .contact-info .media.email span {font-size:25px;}
+    
+    .mob-top-homeimageblock .col-md-4.hidden-xs {display:block !important; float:left;}
 }
 
 @media screen and (max-width: 910px) {
@@ -1610,6 +1629,11 @@ body:not(.customer-account) .block:first-child .block-title {
     .product-block .product-info .price-box .price {font-size:14px;}
     .cms-home .new-products .products-row .col-xs-6 {width:25%;}
     
+    .header-v2 #header-cart.skip-active {position: absolute; right: 15px; width: 300px; background: none; z-index: 100;}
+    
+    .mob-top-homeimageblock .container {padding:0 !important;}
+    .mob-top-homeimageblock .col-md-4 {width:100%; padding:0;}
+    .mob-top-homeimageblock .col-md-4.hidden-xs {display:block !important; float:left;}
 }
 
 @media screen and (max-width: 568px) {
@@ -1629,13 +1653,19 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 
 @media screen and (max-width: 670px) {
+    .cms-home .new-products .box-products {margin:0 0 0 -15px;}
     .product-block .product-info .product-name {height:50px;}
-    .cms-home .new-products .products-row .col-xs-6 {width:50%;}
+    .cms-home .new-products .products-row .col-xs-6 {width:50%; padding-right:0;}
 }
 
 @media screen and (max-width: 480px) {
-    .product-block .product-info .product-name {height:auto;}
-    .cms-home .new-products .products-row .col-xs-6 {width:100%;}
+    .product-block .product-info .product-name {height:80px;}
+    .price-box .special-price {padding-left:10px;}
+    /*.cms-home .new-products .products-row .col-xs-6 {width:100%;}*/
+    
+    .fancybox-inner {height:auto !important; overflow:visible !important;}
+    .fancybox-inner .popup_avaiable .action_button ul li {margin: 0 25px;}
+    .fancybox-inner .popup_avaiable .action_button ul li:first-child {margin-bottom:10px;}
 }
 
 @media screen and (max-width: 368px) {
@@ -1643,3 +1673,5 @@ body:not(.customer-account) .block:first-child .block-title {
     .checkout-onepage-index .main-container {padding:0 16px !important;}
     .logo-cont {width: 150px !important;}
 }
+
+

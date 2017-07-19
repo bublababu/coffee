@@ -76,7 +76,7 @@ $direction = $ves->getConfig('general/direction');
 <head>
     <?php echo $this->getChildHtml('head') ?>
 </head>
-<body class="<?php echo $this->getBodyClass() ?> <?php echo $sticky?"keep-header":"" ?> layout-<?php echo $ves->getConfig('layout/layout_mode', 'fullwidth'); ?> fs<?php echo $ves->getConfig('layout/fontsize');?> <?php echo $ves->getConfig('layout/body_pattern');?>" >
+<body style="overflow: scroll; -webkit-overflow-scrolling: touch;" class="<?php echo $this->getBodyClass() ?> <?php echo $sticky?"keep-header":"" ?> layout-<?php echo $ves->getConfig('layout/layout_mode', 'fullwidth'); ?> fs<?php echo $ves->getConfig('layout/fontsize');?> <?php echo $ves->getConfig('layout/body_pattern');?>" >
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
