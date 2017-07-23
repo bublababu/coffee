@@ -27,6 +27,117 @@
  * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<script type="text/javascript">
+jQuery(function(){
+    jQuery('#checkout-review').on('click','#checkout-review-table .cart-item-quantity',function(){
+        jQuery(this).parent().find('button').prop('disabled', false);
+        jQuery(this).parent().find('button').show()
+    });
+    jQuery('#checkout-review').on('click','#checkout-review-table .quantity-button',function(){
+        var review_height = jQuery('#checkout-review-load').height();
+        jQuery('#checkout-review-table-wrapper').remove();
+        jQuery('#checkout-review-load').css('height',review_height);
+        jQuery('#checkout-review-load').addClass('loading');
+        jQuery.ajax({
+	 data:'form_key=<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>&qty='+jQuery(this).parent().find('input.qty').val(),
+	  type:'post',
+          dataType:'json',
+	  url:jQuery(this).attr('data-link'),
+	  success:function(response){
+            if(response.qty==0){
+                window.location="<?php echo $this->getUrl()?>checkout/cart";
+            }
+	    //jQuery('#checkout-review-load').html(response.review_content);
+            checkout.update({
+                'review': 1
+            });
+            if(response.notice){
+                var globalTimeout = null;
+                if (globalTimeout != null) {
+                clearTimeout(globalTimeout);
+                }
+                globalTimeout = setTimeout(function() {
+                globalTimeout = null;
+                
+                jQuery('.btn-checkout').prop('disabled', true);
+                
+                }, 700);  
+                
+            }else{
+                jQuery('.btn-checkout').prop('disabled', false);
+            }
+            if(response.success==1){
+                if(jQuery('.header-minicart .count')){
+                    jQuery('.header-minicart .count').show();
+                    jQuery('.header-minicart .count').html(response.qty);
+                }
+            }
+	  },
+	  error:function (XMLHttpRequest, textStatus, errorThrown) {
+		  if (textStatus == 'timeout'){}
+		  else if (textStatus == 'error'){}
+		  else if (textStatus == 'parsererror'){}
+	  }
+       });
+    });
+    
+    jQuery('#checkout-review').on('click','#checkout-review-table .remove',function(){
+       
+         if (confirm("<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>") == true) {
+                var review_height = jQuery('#checkout-review-load').height();
+                jQuery('#checkout-review-table-wrapper').remove();
+                jQuery('#checkout-review-load').css('height',review_height);
+                jQuery('#checkout-review-load').addClass('loading');
+                jQuery.ajax({
+                 data:'form_key=<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>',
+                  type:'post',
+                  dataType:'json',
+                  url:jQuery(this).attr('data-link'),
+                  success:function(response){
+                    if(response.qty==0){
+                        window.location="<?php echo $this->getUrl()?>checkout/cart";
+                    }
+                    //jQuery('#checkout-review-load').html(response.review_content);
+                    checkout.update({
+                        'review': 1
+                    });
+                    if(response.notice){
+                        var globalTimeout = null;
+                        if (globalTimeout != null) {
+                        clearTimeout(globalTimeout);
+                        }
+                        globalTimeout = setTimeout(function() {
+                        globalTimeout = null;
+                        
+                        jQuery('.btn-checkout').prop('disabled', true);
+                        
+                        }, 700);  
+                        
+                    }else{
+                        jQuery('.btn-checkout').prop('disabled', false);
+                    }
+                    if(response.success==1){
+                        if(jQuery('.header-minicart .count')){
+                            jQuery('.header-minicart .count').show();
+                            jQuery('.header-minicart .count').html(response.qty);
+                        }
+                    }
+                  },
+                  error:function (XMLHttpRequest, textStatus, errorThrown) {
+                          if (textStatus == 'timeout'){}
+                          else if (textStatus == 'error'){}
+                          else if (textStatus == 'parsererror'){}
+                  }
+               });
+        
+            
+            
+        } else {
+            return false;
+        }
+    });
+})
+</script>
 <div id="checkout-review" class="onestepcheckout_block">
     <div class="op_block_title" id="review"><span class="onestep_heading_no">4</span><?php echo $this->__('Review Your Order') ?></div>
     <div id="checkout-review-load">
@@ -42,3 +153,4 @@
         </div>
     </div>
 </div>
+

@@ -69,7 +69,9 @@ $cartIcon = '<i class="fa '.$cart_class.'"></i>';
 </a>
 
 <div id="header-cart" class="block block-cart skip-content">
+<?php if (Mage::app()->getRequest()->getModuleName()!='onestepcheckout'){?>
 <?php echo $this->getChildHtml('minicart_content');?>
+<?php }?>
 </div>
 </div>
 

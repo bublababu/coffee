@@ -125,15 +125,19 @@ class Clarion_OnestepCheckout_IndexController extends Mage_Checkout_Controller_A
         }
                 
         $quote = $this->getOnestepcheckout()->getQuote();
-        if (!$quote->hasItems() || $quote->getHasError()) {
+	if (!$quote->getItemsCount()) {
             $this->_redirect('checkout/cart');
             return;
+        }
+        if (!$quote->hasItems() || $quote->getHasError()) {
+            //$this->_redirect('checkout/cart');
+            //return;
         }
         if (!$quote->validateMinimumAmount()) {
             $error = Mage::getStoreConfig('sales/minimum_order/error_message');
             Mage::getSingleton('checkout/session')->addError($error);
-            $this->_redirect('checkout/cart');
-            return;
+            //$this->_redirect('checkout/cart');
+            //return;
         }
 
         Mage::getSingleton('checkout/session')->setCartWasUpdated(false);
@@ -212,9 +216,9 @@ class Clarion_OnestepCheckout_IndexController extends Mage_Checkout_Controller_A
     
     public function updateCheckoutAction()
     {
-        if ($this->_expireAjax() || !$this->getRequest()->isPost()) {
+        /*if ($this->_expireAjax() || !$this->getRequest()->isPost()) {
             return;
-        }
+        }*/
 		//Discount coupon 
  
         $quote 				= $this->getOnestepcheckout()->getQuote();

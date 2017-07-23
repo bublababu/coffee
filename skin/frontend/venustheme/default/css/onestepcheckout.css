@@ -263,6 +263,15 @@ p.title-description:first-letter{
 #checkout-payment-method-load .sp-methods table tbody tr td select.payment-country-select {height:30px; padding:2px;}
 #coupon-discount .discount-form .input-box .input-text {height:30px; padding:2px;}
 
+
+#checkout-review-table tbody tr td {width:12%;}
+#checkout-review-table tbody tr td:nth-child(2) {width:40%;}
+#checkout-review-table tbody tr td.a-center {width: 20%;}
+#checkout-review-table tbody tr td.a-center .input-text {text-align: center;}
+#checkout-review-table tbody tr td.a-center button.button {padding: 2px 6px; border-radius: 2px; vertical-align: top;}
+#checkout-review-table tbody tr td.last {text-align: right;}
+#checkout-review-table tbody tr td.last .btn-remove2 {overflow: hidden; width: 14px; display: inline-block; text-indent: 100px; background-position: 0 -648px;}
+
 @media only screen and (max-width: 767px) {
 	#onestepcheckout_orderform .col3-set .col-1, #onestepcheckout_orderform .col3-set .col-2 {width:100%; margin:0;}
 }
@@ -271,3 +280,14 @@ p.title-description:first-letter{
 	#checkout-payment-method-load .blokas span {display:block; line-height:normal;}
 }
 
+@media only screen and (min-width: 591px) {
+	.mob-osc-review-heading {display: none;}
+}
+
+@media only screen and (max-width: 590px) {
+	#checkout-review-table thead {display: none;}
+	#checkout-review-table tbody tr td {width: 100% !important; display: block; float: left; text-align: left; border: 0;}
+	#checkout-review-table tbody tr td.last {border-bottom: 1px solid #BFBFBF; padding-bottom: 10px;}
+	.mob-osc-review-heading {display: inline-block; font-size: 13px; color: #000; font-weight: bold; text-transform: uppercase;}
+	.order-products-table tfoot td {border-bottom: 1px solid #BFBFBF; float: left; width: 50% !important;}
+}

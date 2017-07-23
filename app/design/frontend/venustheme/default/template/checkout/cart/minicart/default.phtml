@@ -133,7 +133,7 @@
                             data-cart-item-id="<?php echo $_item->getSku(); ?>"
                             class="qty cart-item-quantity input-text" name=""
                             value="<?php echo $this->getQty()?>"
-                            <?php if ($this->isOnCheckoutPage()) echo 'disabled'; ?>
+                            <?php if ($this->isOnCheckoutPage() || Mage::app()->getRequest()->getModuleName()=='onestepcheckout') echo 'disabled'; ?>
                             />
 
                         <button id="qbutton-<?php echo $_item->getId(); ?>"
@@ -154,14 +154,15 @@
             <?php echo $this->__('Edit item')?>
         </a>
             |
-            <?php if (!$this->isOnCheckoutPage()): ?>
+            <?php if ($this->isOnCheckoutPage() || Mage::app()->getRequest()->getModuleName()=='onestepcheckout'): ?>
+                <span><?php echo $this->__('Remove Item') ?></span>
+            <?php else: ?>
+                
                 <a href="<?php echo $this->getAjaxDeleteUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove This Item')) ?>"
                    data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
                    class="remove">
                     <?php echo $this->__('Remove Item') ?>
                 </a>
-            <?php else: ?>
-                <span><?php echo $this->__('Remove Item') ?></span>
             <?php endif; ?>
         <?php endif ?>
 
